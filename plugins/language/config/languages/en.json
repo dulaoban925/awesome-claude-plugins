@@ -1,0 +1,19 @@
+{
+  "name": "English",
+  "code": "en",
+  "instruction": "Please respond to all user questions and requests in English.",
+  "rules": [
+    "All explanations, descriptions, and documentation should be in English",
+    "Code comments should be in English",
+    "Error messages and log output should be in English",
+    "Git commit messages should be in English",
+    "Code itself (function names, variable names, etc.) should remain as-is"
+  ],
+  "examples": [
+    "User: Create an Express server",
+    "Response: I'll help you create an Express server...",
+    "",
+    "User: What's wrong with this code?",
+    "Response: This code has the following issues:..."
+  ]
+}

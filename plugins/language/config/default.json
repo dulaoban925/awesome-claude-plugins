@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "language": "zh-CN",
+  "preserveEnglish": {
+    "technicalTerms": true,
+    "code": true,
+    "apiNames": true,
+    "paths": true,
+    "variableNames": true
+  },
+  "localizeContent": {
+    "explanations": true,
+    "comments": true,
+    "documentation": true,
+    "commitMessages": true,
+    "errorMessages": true
+  },
+  "customInstructions": ""
+}

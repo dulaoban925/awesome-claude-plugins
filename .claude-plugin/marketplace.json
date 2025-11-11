@@ -1,0 +1,24 @@
+{
+  "name": "awesome-claude",
+  "description": "精选的 Claude Code 插件集合",
+  "owner": {
+    "name": "Awesome Claude Plugin",
+    "url": "https://github.com/your-username/awesome-claude-plugin"
+  },
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "language",
+      "source": "./plugins/language",
+      "description": "让 Claude Code 使用指定语言回复，支持中文、英文、日文等多种语言",
+      "version": "1.0.0",
+      "keywords": [
+        "language",
+        "i18n",
+        "chinese",
+        "localization",
+        "中文"
+      ]
+    }
+  ]
+}

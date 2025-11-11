@@ -1,0 +1,16 @@
+{
+  "name": "language",
+  "version": "1.0.0",
+  "description": "让 Claude Code 使用指定语言回复，支持中文、英文、日文等多种语言",
+  "author": {
+    "name": "Awesome Claude Plugin"
+  },
+  "commands": "./commands",
+  "keywords": [
+    "language",
+    "i18n",
+    "chinese",
+    "localization",
+    "中文"
+  ]
+}
