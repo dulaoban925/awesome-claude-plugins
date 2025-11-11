@@ -2,8 +2,8 @@
   "name": "awesome-claude",
   "description": "精选的 Claude Code 插件集合",
   "owner": {
-    "name": "Awesome Claude Plugin",
-    "url": "https://github.com/your-username/awesome-claude-plugin"
+    "name": "Awesome Claude Plugins",
+    "url": "https://github.com/dulaoban925/awesome-claude-plugins"
   },
   "version": "1.0.0",
   "plugins": [

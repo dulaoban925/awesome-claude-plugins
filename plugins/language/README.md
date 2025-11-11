@@ -12,13 +12,22 @@
 
 ## 安装
 
-请参考 [快速开始指南](../../QUICKSTART.md)。
+### 通过插件市场安装
 
-安装完成后，**必须运行初始化命令**来配置 hook：
+1. 添加插件市场：
+   ```bash
+   /plugin marketplace add /path/to/awesome-claude-plugins
+   ```
 
-```bash
-/lang-config init
-```
+2. 安装插件：
+   ```bash
+   /plugin install language@awesome-claude
+   ```
+
+3. **运行初始化命令**（必需）：
+   ```bash
+   /lang-config init
+   ```
 
 该命令会自动将插件的 hook 配置到 `~/.claude/settings.json`，并创建备份文件。
 
