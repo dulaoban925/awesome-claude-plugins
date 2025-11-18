@@ -78,8 +78,10 @@ function findPluginRoot() {
     if (fs.existsSync(installedPluginsPath)) {
       const content = fs.readFileSync(installedPluginsPath, 'utf-8');
       const data = JSON.parse(content);
-      if (data.plugins && data.plugins['language@awesome-claude']) {
-        const installPath = data.plugins['language@awesome-claude'].installPath;
+
+      // 尝试新的插件市场名称
+      if (data.plugins && data.plugins['language@awesome-claude-plugins']) {
+        const installPath = data.plugins['language@awesome-claude-plugins'].installPath;
         if (installPath && fs.existsSync(installPath)) {
           return installPath;
         }

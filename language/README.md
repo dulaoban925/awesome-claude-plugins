@@ -15,18 +15,20 @@
 ### 通过插件市场安装
 
 1. 添加插件市场：
+
    ```bash
    /plugin marketplace add /path/to/awesome-claude-plugins
    ```
 
 2. 安装插件：
+
    ```bash
-   /plugin install language@awesome-claude
+   /plugin install language@awesome-claude-plugins
    ```
 
 3. **运行初始化命令**（必需）：
    ```bash
-   /lang-config init
+   /lang init
    ```
 
 该命令会自动将插件的 hook 配置到 `~/.claude/settings.json`，并创建备份文件。
@@ -38,49 +40,75 @@
 首次使用前，必须运行初始化命令：
 
 ```bash
-/lang-config init
+/lang init
 ```
 
-检查 hook 配置状态：
+初始化默认使用**中文**。
+
+检查插件状态：
 
 ```bash
-/lang-config check
+/lang status
 ```
 
-### 查看当前配置
+### 快速开始
 
 ```bash
-/lang-config show
+# 查看当前状态
+/lang
+
+# 临时切换语言（当前会话）
+/lang zh-CN              # 切换到中文
+/lang en                 # 切换到英文
+
+# 永久设置默认语言
+/lang set zh-CN          # 设置为简体中文
+/lang set en             # 设置为英语
+
+# 查看所有命令
+/lang help
 ```
 
-### 设置默认语言
+### 核心命令
+
+**临时切换（当前会话）**：
 
 ```bash
-/lang-config set zh-CN    # 设置为简体中文
-/lang-config set en       # 设置为英语
-/lang-config set ja       # 设置为日语
+/lang zh-CN              # 临时切换到中文
+/lang en                 # 临时切换到英文
+/lang ja                 # 临时切换到日文
 ```
 
-### 临时切换语言
-
-在对话中临时切换语言（仅当前会话生效）：
+**永久设置**：
 
 ```bash
-/lang zh-CN    # 切换到中文
-/lang en       # 切换到英语
+/lang set zh-CN          # 默认使用中文
+/lang set en             # 默认使用英文
 ```
 
-### 启用/禁用插件
+### 配置管理
+
+**查看配置**：
 
 ```bash
-/lang-config enable       # 启用插件
-/lang-config disable      # 禁用插件
+/lang show               # 显示完整配置
+/lang list               # 列出支持的语言
 ```
 
-### 列出支持的语言
+**插件管理**：
 
 ```bash
-/lang-config list
+/lang enable             # 启用插件
+/lang disable            # 禁用插件
+/lang reset              # 重置为默认配置
+/lang uninstall          # 卸载插件
+```
+
+### 帮助信息
+
+```bash
+/lang help               # 查看完整帮助
+/lang help set           # 查看 set 命令帮助
 ```
 
 ## 支持的语言
@@ -192,16 +220,16 @@ EOF
 
 ### 插件不生效
 
-1. **首先运行初始化命令**：`/lang-config init`
-2. 检查 hook 是否已配置：`/lang-config check`
-3. 确认配置已启用：`/lang-config show`（确保 `enabled: true`）
+1. **首先运行初始化命令**：`/lang init`
+2. 检查插件状态：`/lang status`
+3. 确认配置已启用：`/lang show`（确保 `enabled: true`）
 4. 重启新的对话会话
 
 ### 语言切换无效
 
-1. 确认 hook 已配置：`/lang-config check`
+1. 确认插件状态正常：`/lang status`
 2. 确认配置已启用：`enabled: true`
-3. 检查语言代码是否正确：`/lang-config list`
+3. 检查语言代码是否正确：`/lang list`
 4. 配置更改需要在下次对话时生效
 
 ### 找不到命令
@@ -214,15 +242,21 @@ EOF
 
 如果需要完全卸载插件：
 
-1. 移除 hook 配置：`/lang-config remove`
-2. 删除语言配置文件：`rm ~/.claude/language-config.json`
-3. 使用 Claude Code 的插件管理功能卸载插件
+1. 移除 hook 配置：`/lang uninstall`
+2. 使用 Claude Code 的插件管理功能卸载插件：`/plugin uninstall language@awesome-claude-plugins`
 
 ## 示例
 
 详细使用示例请参考 [examples/usage.md](examples/usage.md)。
 
 ## 版本历史
+
+### 2.0.0
+
+- 统一命令设计：所有功能集成到 `/lang` 命令
+- 废弃 `/lang-config` 命令
+- 改进的命令行输出和错误提示
+- 更简洁的使用体验
 
 ### 1.0.0
 

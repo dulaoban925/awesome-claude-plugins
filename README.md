@@ -21,20 +21,20 @@
 3. 安装插件：
 
    ```bash
-   /plugin install language@awesome-claude
+   /plugin install language@awesome-claude-plugins
    ```
 
 4. 初始化插件（必需）：
 
    ```bash
-   /lang-config init
+   /lang init
    ```
 
 ### 方式二：手动安装
 
 1. 克隆本仓库到本地
 2. 在 Claude Code 中使用 `/plugin install` 命令指向插件目录
-3. 运行 `/lang-config init` 初始化插件
+3. 运行 `/lang init` 初始化插件
 
 ## 插件列表
 
@@ -50,19 +50,22 @@
 - 🔄 即时切换：通过命令快速切换语言
 - 📝 自定义规则：可添加自定义语言指令
 
-**文档**：[plugins/language/README.md](plugins/language/README.md)
+**文档**：[language/README.md](language/README.md)
 
 **快速使用**：
 
 ```bash
 # 初始化插件
-/lang-config init
+/lang init
 
 # 设置为中文
-/lang-config set zh-CN
+/lang set zh-CN
 
 # 临时切换语言
 /lang zh-CN
+
+# 查看帮助
+/lang help
 ```
 
 ## 项目结构
@@ -70,18 +73,17 @@
 ```text
 awesome-claude-plugins/
 ├── .claude-plugin/
-│   └── marketplace.json       # 插件市场清单
-├── plugins/                   # 插件目录
-│   └── language/             # 语言插件
-│       ├── .claude-plugin/   # 插件配置
-│       ├── commands/         # Slash Commands
-│       ├── hooks/           # Hooks 配置
-│       ├── scripts/         # 管理脚本
-│       ├── config/          # 语言配置文件
-│       ├── examples/        # 使用示例
-│       └── README.md        # 插件文档
-├── README.md                 # 项目说明
-└── .gitignore               # Git 忽略文件
+│   └── marketplace.json      # 插件市场清单
+├── language/                 # 语言插件
+│   ├── .claude-plugin/      # 插件配置
+│   ├── commands/            # Slash Commands
+│   ├── hooks/              # Hooks 配置
+│   ├── scripts/            # 管理脚本
+│   ├── config/             # 语言配置文件
+│   ├── examples/           # 使用示例
+│   └── README.md           # 插件文档
+├── README.md                # 项目说明
+└── .gitignore              # Git 忽略文件
 ```
 
 ## 插件开发

@@ -14,8 +14,8 @@ function findPluginPath() {
     if (fs.existsSync(installedPluginsPath)) {
       const content = fs.readFileSync(installedPluginsPath, 'utf-8');
       const data = JSON.parse(content);
-      if (data.plugins && data.plugins['language@awesome-claude']) {
-        return data.plugins['language@awesome-claude'].installPath;
+      if (data.plugins && data.plugins['language@awesome-claude-plugins']) {
+        return data.plugins['language@awesome-claude-plugins'].installPath;
       }
     }
   } catch (error) {
